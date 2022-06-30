@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
+// Styled image 操作
+const Sprite = styled.img`
+  width: 8rem;
+  height: 8rem
+`
 class PokemonCard extends Component {
   state = {
     name: "",
@@ -26,8 +32,9 @@ class PokemonCard extends Component {
       <div className="col-md-3 col-sm-6 mb-5">
         <div className="card">
           {/* text-start 是bootstrap把text移到左边的class  */}
-          <h5 className="card-header text-start">{this.state.pokemonIndex}</h5>
-          <div className="card-body">
+          <h5 className="card-header">{this.state.pokemonIndex}</h5>
+          <Sprite className="card-img rounded mx-auto mt-2" src={this.state.imageUrl}></Sprite>
+          <div className="card-body mx-auto">
             <h6 className="card-title">
               {/* If there is a space between the name, apply camel case */}
               {this.state.name
