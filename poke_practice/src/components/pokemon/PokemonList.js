@@ -8,23 +8,26 @@ class PokemonList extends Component {
     pokemon: null
   }
 
-  componentDidMount() {
-    const res = axios.get(this.state.url)
+  async componentDidMount() {
+    const res =  await axios.get(this.state.url)
     // res.data 是API传过来的整个Json数据
     this.setState({pokemon: res.data['results']})
   }
-  
+
   render() {
     return (
-      <div className='row'>
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-      </div>
-    )
+      <React.Fragment>
+      {this.state.pokemon ? (
+        <div className='row'>
+          {this.state.pokemon.map(pokemon => (
+            <PokemonCard />
+          ))}
+        </div>
+      ) : (
+        <h1>Loading Pokemons...</h1>
+      )}
+      </React.Fragment>
+    )  
   }
 }
 
