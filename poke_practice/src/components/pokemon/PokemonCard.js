@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Styled image 操作
 const Sprite = styled.img`
   width: 8rem;
-  height: 8rem
-`
+  height: 8rem;
+`;
 
 const Card = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -13,7 +14,7 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
-`
+`;
 class PokemonCard extends Component {
   state = {
     name: "",
@@ -38,24 +39,29 @@ class PokemonCard extends Component {
   render() {
     return (
       <div className="col-md-3 col-sm-6 mb-5">
-        <Card className="card">
-          {/* text-start 是bootstrap把text移到左边的class  */}
-          <h5 className="card-header">{this.state.pokemonIndex}</h5>
-          <Sprite className="card-img rounded mx-auto mt-2" src={this.state.imageUrl}></Sprite>
-          <div className="card-body mx-auto">
-            <h6 className="card-title">
-              {/* If there is a space between the name, apply camel case */}
-              {this.state.name
-                .toLowerCase()
-                .split(" ")
-                .map(
-                  (letter) =>
-                    letter.charAt(0).toUpperCase() + letter.substring(1)
-                )
-                .join(" ")}
-            </h6>
-          </div>
-        </Card>
+        <Link to={`pokemon/${this.state.pokemonIndex}`}>
+          <Card className="card">
+            {/* text-start 是bootstrap把text移到左边的class  */}
+            <h5 className="card-header">{this.state.pokemonIndex}</h5>
+            <Sprite
+              className="card-img rounded mx-auto mt-2"
+              src={this.state.imageUrl}
+            ></Sprite>
+            <div className="card-body mx-auto">
+              <h6 className="card-title">
+                {/* If there is a space between the name, apply camel case */}
+                {this.state.name
+                  .toLowerCase()
+                  .split(" ")
+                  .map(
+                    (letter) =>
+                      letter.charAt(0).toUpperCase() + letter.substring(1)
+                  )
+                  .join(" ")}
+              </h6>
+            </div>
+          </Card>
+        </Link>
       </div>
     );
   }
