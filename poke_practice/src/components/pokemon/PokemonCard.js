@@ -6,6 +6,14 @@ const Sprite = styled.img`
   width: 8rem;
   height: 8rem
 `
+
+const Card = styled.div`
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+`
 class PokemonCard extends Component {
   state = {
     name: "",
@@ -30,7 +38,7 @@ class PokemonCard extends Component {
   render() {
     return (
       <div className="col-md-3 col-sm-6 mb-5">
-        <div className="card">
+        <Card className="card">
           {/* text-start 是bootstrap把text移到左边的class  */}
           <h5 className="card-header">{this.state.pokemonIndex}</h5>
           <Sprite className="card-img rounded mx-auto mt-2" src={this.state.imageUrl}></Sprite>
@@ -47,7 +55,7 @@ class PokemonCard extends Component {
                 .join(" ")}
             </h6>
           </div>
-        </div>
+        </Card>
       </div>
     );
   }
