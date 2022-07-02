@@ -15,6 +15,19 @@ const Card = styled.div`
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
 `;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+` 
+
 class PokemonCard extends Component {
   state = {
     name: "",
@@ -39,7 +52,7 @@ class PokemonCard extends Component {
   render() {
     return (
       <div className="col-md-3 col-sm-6 mb-5">
-        <Link to={`pokemon/${this.state.pokemonIndex}`}>
+        <StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
           <Card className="card">
             {/* text-start 是bootstrap把text移到左边的class  */}
             <h5 className="card-header">{this.state.pokemonIndex}</h5>
@@ -61,7 +74,7 @@ class PokemonCard extends Component {
               </h6>
             </div>
           </Card>
-        </Link>
+        </StyledLink>
       </div>
     );
   }
