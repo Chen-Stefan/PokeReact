@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
@@ -12,10 +12,10 @@ function App() {
       <div className="App">
         <Navbar />
         <div className="container">
-          <Routes>
-            <Route exact path="/" element= {<Dashboard />} />
-            <Route exact path="/pokemon/:pokemonIndex" element= {<Pokemon />} />
-          </Routes>
+          <Switch>
+            <Route exact path="/" component= {Dashboard} />
+            <Route exact path="/pokemon/:pokemonIndex" component= {Pokemon} />
+          </Switch>
         </div>
       </div>
     </Router>
