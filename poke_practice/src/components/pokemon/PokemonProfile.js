@@ -1,6 +1,27 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+const TYPE_COLORS = {
+  bug: "#C2D020",
+  dark: "#8E6A57",
+  dragon: "#8B77FE",
+  electric: "#FDE63F",
+  fairy: "#F9AEFF",
+  fighting: "#A4583F",
+  fire: "#FA5643",
+  flying: "#79A4FF",
+  ghost: "#7A75D3",
+  grass: "#8CD851",
+  ground: "#EBCD55",
+  ice: "#94F1FE",
+  normal: "#BBBCAB",
+  poison: "#AA5DA2",
+  psychic: "#F45FAE",
+  rock: "#CEBC72",
+  steel: "#C4C2DA",
+  water: "#55AEFF",
+};
+
 class PokemonProfile extends Component {
   state = {
     name: "",
@@ -158,9 +179,21 @@ class PokemonProfile extends Component {
               <div className="col-7">
                 {/* Use float-end(v5) instead of float-right(v4) */}
                 <div className="float-end">
-                  {this.state.types.map(type => (
-                    <span key={type}
-                    className ='badge bg-primary bg-pill mr-1'>{type}</span>
+                  {this.state.types.map((type) => (
+                    <span
+                      key={type}
+                      className="badge bg-pill mr-1"
+                      style={{
+                        backgroundColor: `${TYPE_COLORS[type]}`,
+                        color: 'white'
+                      }}
+                    >
+                      {type
+                        .toLowerCase()
+                        .split(" ")
+                        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+                        .join(" ")}
+                    </span>
                   ))}
                 </div>
               </div>
