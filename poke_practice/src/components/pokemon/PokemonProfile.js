@@ -219,12 +219,16 @@ class PokemonProfile extends Component {
                   <div className="col-12 col-md-3">HP</div>
                   <div className="col-12 col-md-9">
                     <div className="progress">
-                      <div className="progress-bar" role="progressBar" style={{
-                        width: `${this.state.stats.hp}%`
-                      }}
-                      area-valuenow='25'
-                      area-aria-valuemin='0'
-                      aria-valuemax='100'>
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{
+                          width: `${this.state.stats.hp}%`,
+                        }}
+                        area-valuenow="25"
+                        area-aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
                         <small>{this.state.stats.hp}</small>
                       </div>
                     </div>
@@ -234,12 +238,16 @@ class PokemonProfile extends Component {
                   <div className="col-12 col-md-3">Attack</div>
                   <div className="col-12 col-md-9">
                     <div className="progress">
-                      <div className="progress-bar" role="progressBar" style={{
-                        width: `${this.state.stats.attack}%`
-                      }}
-                      area-valuenow='25'
-                      area-aria-valuemin='0'
-                      aria-valuemax='100'>
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{
+                          width: `${this.state.stats.attack}%`,
+                        }}
+                        area-valuenow="25"
+                        area-aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
                         <small>{this.state.stats.attack}</small>
                       </div>
                     </div>
@@ -249,12 +257,16 @@ class PokemonProfile extends Component {
                   <div className="col-12 col-md-3">Defense</div>
                   <div className="col-12 col-md-9">
                     <div className="progress">
-                      <div className="progress-bar" role="progressBar" style={{
-                        width: `${this.state.stats.defense}%`
-                      }}
-                      area-valuenow='25'
-                      area-aria-valuemin='0'
-                      aria-valuemax='100'>
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{
+                          width: `${this.state.stats.defense}%`,
+                        }}
+                        area-valuenow="25"
+                        area-aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
                         <small>{this.state.stats.defense}</small>
                       </div>
                     </div>
@@ -264,12 +276,16 @@ class PokemonProfile extends Component {
                   <div className="col-12 col-md-3">Speed</div>
                   <div className="col-12 col-md-9">
                     <div className="progress">
-                      <div className="progress-bar" role="progressBar" style={{
-                        width: `${this.state.stats.speed}%`
-                      }}
-                      area-valuenow='25'
-                      area-aria-valuemin='0'
-                      aria-valuemax='100'>
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{
+                          width: `${this.state.stats.speed}%`,
+                        }}
+                        area-valuenow="25"
+                        area-aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
                         <small>{this.state.stats.speed}</small>
                       </div>
                     </div>
@@ -279,12 +295,16 @@ class PokemonProfile extends Component {
                   <div className="col-12 col-md-3">Special Attack</div>
                   <div className="col-12 col-md-9">
                     <div className="progress">
-                      <div className="progress-bar" role="progressBar" style={{
-                        width: `${this.state.stats.specialAttack}%`
-                      }}
-                      area-valuenow='25'
-                      area-aria-valuemin='0'
-                      aria-valuemax='100'>
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{
+                          width: `${this.state.stats.specialAttack}%`,
+                        }}
+                        area-valuenow="25"
+                        area-aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
                         <small>{this.state.stats.specialAttack}</small>
                       </div>
                     </div>
@@ -294,19 +314,43 @@ class PokemonProfile extends Component {
                   <div className="col-12 col-md-3">Special Defense</div>
                   <div className="col-12 col-md-9">
                     <div className="progress">
-                      <div className="progress-bar" role="progressBar" style={{
-                        width: `${this.state.stats.specialDefense}%`
-                      }}
-                      area-valuenow='25'
-                      area-aria-valuemin='0'
-                      aria-valuemax='100'>
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{
+                          width: `${this.state.stats.specialDefense}%`,
+                        }}
+                        area-valuenow="25"
+                        area-aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
                         <small>{this.state.stats.specialDefense}</small>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              
+              <div className="row mt-1">
+                <div className="col">
+                  <p>{this.state.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div className="card-body">
+            <h5 className="card-title text-center">Profile</h5>
+            <div className="row">
+              <div className="col-md-6">
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-end">Height:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <h6>{this.state.height}cm</h6>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
