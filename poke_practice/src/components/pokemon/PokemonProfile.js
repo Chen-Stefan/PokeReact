@@ -185,7 +185,7 @@ class PokemonProfile extends Component {
                       className="badge bg-pill mr-1"
                       style={{
                         backgroundColor: `${TYPE_COLORS[type]}`,
-                        color: 'white'
+                        color: "white",
                       }}
                     >
                       {type
@@ -196,6 +196,13 @@ class PokemonProfile extends Component {
                     </span>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="card-body">
+            <div className="row align-items-center">
+              <div className="col-md-3">
+                <img src={this.state.imageUrl} className='card-img-top rounded mx-auto mt-2'/>
               </div>
             </div>
           </div>
