@@ -60,12 +60,11 @@ class Pokemon extends Component {
           break;
       }
     });
-    // Convert height from pokemon measures to cm, convert weight to kg
+    // Convert height from decimeter to cm, convert weight from hectogram to kg
     const height =
-      Math.round(pokemonRes.data.height * 0.328084 * 0.0001 * 2.54 * 100) / 100;
+      Math.round(pokemonRes.data.height * 10 * 100) / 100;
     const weight =
-      Math.round(pokemonRes.data.weight * 0.220462 * 0.0001 * 0.453592 * 100) /
-      100;
+      Math.round(pokemonRes.data.weight * 0.1 * 100) / 100;
 
     const types = pokemonRes.data.types.map((type) => type.type.name);
     const abilities = pokemonRes.data.abilities.map((ability) => {
@@ -123,6 +122,25 @@ class Pokemon extends Component {
           eggGroups,
           hatchSteps
         })
+      })
+
+      this.setState({
+        imageUrl,
+        pokemonIndex,
+        name,
+        types,
+        stats: {
+          hp,
+          attack,
+          defense,
+          speed,
+          specialAttack,
+          specialDefense
+        },
+        height,
+        weight,
+        abilities,
+        evs
       })
   }
 
