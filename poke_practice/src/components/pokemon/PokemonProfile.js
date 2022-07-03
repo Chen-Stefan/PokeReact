@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class Pokemon extends Component {
+class PokemonProfile extends Component {
   state = {
     name: "",
     pokemonIndex: "",
@@ -172,4 +172,4 @@ class Pokemon extends Component {
   }
 }
 
-export default Pokemon;
+export default PokemonProfile;
