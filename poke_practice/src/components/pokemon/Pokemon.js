@@ -6,7 +6,25 @@ class Pokemon extends Component {
   state = {
     name: '',
     pokemonIndex: '',
-    imageUrl: ''
+    imageUrl: '',
+    types: [],
+    description: '',
+    stats: {
+      hp: '',
+      attack: '',
+      defense: '',
+      speed: '',
+      specialAttack: '',
+      specialDefense: ''
+    },
+    height: '',
+    weight: '',
+    eggGroup: '',
+    abilities: '',
+    genderRatioMale: '',
+    genderRatioFemale: '',
+    evs: '',
+    hatchSteps: ''
   }
 
   async componentDidMount() {
@@ -17,7 +35,9 @@ class Pokemon extends Component {
 
     const pokemonRes = await axios.get(pokemonUrl)
     const name = pokemonRes.data.name
-    this.setState({name})
+    const imageUrl = pokemonRes.data.sprites.front_default
+
+    let {hp, attack, defense, speed, specialAttack, specialDefense} = ''
   }
 
   render() {
